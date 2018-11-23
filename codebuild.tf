@@ -78,7 +78,7 @@ resource "aws_codebuild_project" "codebuild" {
 
   source {
     type            = "CODECOMMIT"
-    location        = "https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/terraform-codebuild"
+    location        = "${aws_codecommit_repository.repo.clone_url_http}"
     git_clone_depth = 1
   }
 
